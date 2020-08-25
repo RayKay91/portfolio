@@ -5,7 +5,6 @@ $blue: rgb(2, 67, 131);
 $blueTranslucent: rgba(2, 67, 131, 0.98);
 $action-blue: rgb(36, 117, 247);
 $darkTextColor: #434343;
-$buttonRadius: 1rem;
 
 //globals
 * {
@@ -44,6 +43,9 @@ body {
     top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1.5px;
   }
 }
 
@@ -52,7 +54,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 1.5rem 3.5rem;
+  padding: 1rem 3.5rem;
   color: $blue;
   font-size: 2rem;
   background-color: white;
@@ -63,6 +65,23 @@ body {
   &:hover {
     background-color: $blue;
     color: white;
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: white;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 50px;
+    transition: all 0.4s ease;
   }
 }
 .secondary-title {
@@ -78,6 +97,7 @@ body {
 }
 
 .wrapper {
+  margin-top: 2rem;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -118,10 +138,28 @@ hr {
 }
 
 .project {
+  display: flex;
+  flex-direction: inherit;
   width: 70%;
   padding: 2rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin: 1.5rem;
+
+  .video {
+    overflow: hidden;
+    padding-top: 56.25%;
+    position: relative;
+  }
+
+  .video iframe {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
   h5 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
@@ -162,5 +200,36 @@ hr {
       background-color: white;
       border: 2px solid $action-blue;
     }
+  }
+}
+
+.video {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    padding: 0rem;
+  }
+  .more {
+    top: 70%;
+  }
+  .wrapper {
+    margin-top: 3rem;
+  }
+  .tech ul {
+    flex-flow: row wrap;
+    li {
+      margin: 1rem;
+    }
+  }
+  .projects {
+    margin: 1rem;
+  }
+  .project {
+    width: 100%;
+    margin: 2rem 0;
   }
 }

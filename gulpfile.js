@@ -20,6 +20,12 @@ gulp.task('optimiseImgs', function () {
     .pipe(gulp.dest('dist/images'));
 });
 
+//copy JS
+
+gulp.task('copy-js', function () {
+  return gulp.src('src/*.js').pipe(gulp.dest('dist'));
+});
+
 //minify CSS
 
 gulp.task('minify-css', function () {

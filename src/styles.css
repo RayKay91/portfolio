@@ -14,7 +14,7 @@ body {
 .hero {
   height: 95vh;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  background-image: linear-gradient(to right bottom, #0466c8c2, rgba(2, 67, 131, 0.98)), url(./images/safar-safarov-MSN8TFhJ0is-unsplash.jpg);
+  background-image: linear-gradient(to right bottom, #0466c8c2, rgba(2, 67, 131, 0.98)), url(./images/safar-safarov-MSN8TFhJ0is-unsplash-pichi.jpg);
   background-size: cover;
   background-position: top;
   position: relative; }

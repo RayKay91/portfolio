@@ -41,6 +41,7 @@ body {
   border-radius: 50px;
   border: none;
   font-weight: 600;
+  text-decoration: none;
   cursor: pointer; }
   .more:hover {
     background-color: #024383;

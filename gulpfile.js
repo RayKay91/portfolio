@@ -36,7 +36,7 @@ function compileSass() {
 }
 
 function watchTask() {
-  watch(['src/styles.scss'], compileSass);
+  watch('src/styles.scss', compileSass);
 }
 
 exports.default = series(

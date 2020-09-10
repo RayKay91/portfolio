@@ -11,6 +11,9 @@ body {
   padding: 3rem;
   color: #434343; }
 
+.blue-font {
+  color: #2475f7; }
+
 .hero {
   height: 95vh;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
@@ -47,7 +50,7 @@ body {
     background-color: #024383;
     color: white; }
     .more:hover::after {
-      animation: enlarge 1.4s normal ease infinite forwards; }
+      animation: enlarge 0.45s normal ease forwards; }
   .more::after {
     content: '';
     position: absolute;
@@ -60,12 +63,9 @@ body {
     border-radius: 50px; }
 
 @keyframes enlarge {
-  0% {
+  from {
     opacity: 100%; }
-  45% {
-    opacity: 0;
-    transform: scaleX(1.4) scaleY(1.6); }
-  100% {
+  to {
     opacity: 0;
     transform: scaleX(1.4) scaleY(1.6); } }
 
@@ -88,6 +88,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center; }
+  .wrapper p {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3.5rem;
+    font-weight: 500; }
   .wrapper h3 {
     margin-bottom: 1.5rem; }
   .wrapper ul {

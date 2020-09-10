@@ -67,8 +67,7 @@ body {
     background-color: $blue;
     color: white;
     &::after {
-      transform: scaleX(1.4) scaleY(1.6);
-      opacity: 0;
+      animation: enlarge 1.4s normal ease infinite forwards;
     }
   }
 
@@ -82,9 +81,23 @@ body {
     left: 0;
     z-index: -1;
     border-radius: 50px;
-    transition: all 0.4s ease;
   }
 }
+
+@keyframes enlarge {
+  0% {
+    opacity: 100%;
+  }
+  45% {
+    opacity: 0;
+    transform: scaleX(1.4) scaleY(1.6);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleX(1.4) scaleY(1.6);
+  }
+}
+
 .secondary-title {
   text-align: center;
   font-size: 2rem;
@@ -99,11 +112,13 @@ body {
 
 .wrapper {
   margin-top: 2rem;
+  max-width: 85%;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   h3 {
     margin-bottom: 1.5rem;
   }
@@ -111,6 +126,7 @@ body {
     display: flex;
     justify-content: center;
     font-size: 2rem;
+    flex-flow: row wrap;
   }
   li {
     list-style-type: none;

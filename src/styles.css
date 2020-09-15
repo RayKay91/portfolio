@@ -20,47 +20,61 @@ body {
   background-image: linear-gradient(to right bottom, #0466c8c2, rgba(2, 67, 131, 0.98)), url(./images/safar-safarov-MSN8TFhJ0is-unsplash-pichi.jpg);
   background-size: cover;
   background-position: top;
-  position: relative; }
-  .hero h1 {
-    color: white;
-    font-size: 3rem;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 1.5px; }
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center; }
+  .hero .hero-main {
+    position: relative;
+    top: -7rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    animation-name: fadeUp;
+    animation-duration: 0.5s; }
+    .hero .hero-main h1 {
+      color: white;
+      font-size: 3rem;
+      text-align: center;
+      letter-spacing: 1.5px;
+      margin-bottom: 4.5rem; }
+    .hero .hero-main .more {
+      position: relative;
+      padding: 1rem 3.5rem;
+      color: #024383;
+      font-size: 2rem;
+      background-color: white;
+      border-radius: 50px;
+      border: none;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      max-width: 30%; }
+      .hero .hero-main .more:hover {
+        background-color: #024383;
+        color: white; }
+        .hero .hero-main .more:hover::after {
+          animation: enlarge 0.45s normal ease forwards; }
+      .hero .hero-main .more::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: white;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 50px; }
 
-.more {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 1rem 3.5rem;
-  color: #024383;
-  font-size: 2rem;
-  background-color: white;
-  border-radius: 50px;
-  border: none;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer; }
-  .more:hover {
-    background-color: #024383;
-    color: white; }
-    .more:hover::after {
-      animation: enlarge 0.45s normal ease forwards; }
-  .more::after {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: white;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    border-radius: 50px; }
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px); }
+  to {
+    opacity: 100;
+    transform: translateY(0px); } }
 
 @keyframes enlarge {
   from {

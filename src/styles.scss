@@ -11,7 +11,6 @@ $darkTextColor: #434343;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  //   border: 1px solid lime;
 }
 
 html {
@@ -40,51 +39,72 @@ body {
   background-size: cover;
   background-position: top;
   position: relative;
-  h1 {
-    color: white;
-    font-size: 3rem;
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 1.5px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  .hero-main {
+    position: relative;
+    top: -7rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    animation-name: fadeUp;
+    animation-duration: 0.5s;
+
+    h1 {
+      color: white;
+      font-size: 3rem;
+      text-align: center;
+      letter-spacing: 1.5px;
+      margin-bottom: 4.5rem;
+    }
+    .more {
+      position: relative;
+
+      padding: 1rem 3.5rem;
+      color: $blue;
+      font-size: 2rem;
+      background-color: white;
+      border-radius: 50px;
+      border: none;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      max-width: 30%;
+      &:hover {
+        background-color: $blue;
+        color: white;
+        &::after {
+          animation: enlarge 0.45s normal ease forwards;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: white;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 50px;
+      }
+    }
   }
 }
 
-.more {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 1rem 3.5rem;
-  color: $blue;
-  font-size: 2rem;
-  background-color: white;
-  border-radius: 50px;
-  border: none;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  &:hover {
-    background-color: $blue;
-    color: white;
-    &::after {
-      animation: enlarge 0.45s normal ease forwards;
-    }
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
   }
-
-  &::after {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: white;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    border-radius: 50px;
+  to {
+    opacity: 100;
+    transform: translateY(0px);
   }
 }
 

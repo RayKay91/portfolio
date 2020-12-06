@@ -39,8 +39,12 @@ function watchTask() {
   watch('src/styles.scss', compileSass);
 }
 
+
+exports.build = parallel(minifyHTML, optimiseImgs, copyJs, compileSass,
+  minifyCss)
+
 exports.default = series(
-  parallel(minifyHTML, optimiseImgs, copyJs, compileSass),
-  minifyCss,
+  parallel(minifyHTML, optimiseImgs, copyJs, compileSass, minifyCss),
   watchTask
-);
+)
+
